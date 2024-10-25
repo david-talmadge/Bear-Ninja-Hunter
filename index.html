@@ -19,8 +19,12 @@
       alert(`Hi ${uName} Let's Play!!`);
       //Ask type
       let uType = prompt('Who are you: Bear, Ninja, or Hunter? ');
+      //Set types
+      let uPicks = `${uName}, You picked Bear!\nComputer Picked Bear!`;
+      //Print types to console
+      console.log(uPicks);
       //Unconditionally made a Bear
-      document.getElementById("demo").innerHTML = `User ${uName} is a Bear`;
+      document.getElementById("demo").innerHTML = uPicks;
       //document.getElementById("demo").innerHTML = `User ${uName} is a ${uType}`;
     </script>
     </script>
