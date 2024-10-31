@@ -19,6 +19,13 @@
       alert(`Hi ${uName} Let's Play!!`);
       //Ask type
       let uType = prompt('Who are you: Bear, Ninja, or Hunter? ');
+      if(uType.toLowerCase()==='bear'){
+        uType = 'Bear';
+      }else if(uType.toLowerCase()==='ninja'){
+        uType = 'Ninja';
+      }else if(uType.toLowerCase()==='hunter'){
+        uType = 'Hunter';
+      } //else ask to reinput result
       let sType = 'Bear';
       //Set types to print
       let uPrintedType = `${uName}, You picked ${uType}!`;
