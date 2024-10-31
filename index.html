@@ -19,15 +19,63 @@
       alert(`Hi ${uName} Let's Play!!`);
       //Ask type
       let uType = prompt('Who are you: Bear, Ninja, or Hunter? ');
+      let sType = 'Bear';
       //Set types to print
-      let uPrintedType = `${uName}, You picked Bear!`;
-      let sPrintedType = `Computer Picked Bear!`;
+      let uPrintedType = `${uName}, You picked ${uType}!`;
+      let sPrintedType = `Computer Picked ${sType}!`;
       //Print types to console
       console.log(uPrintedType);
       console.log(sPrintedType);
-      //Unconditionally made a Bear
-      document.getElementById("demo").innerHTML = uPrintedType + "<br>" + sPrintedType;
-      //document.getElementById("demo").innerHTML = `User ${uName} is a ${uType}`;
+      
+      let combination;
+      let winner;
+      let result;
+      if(uType==='Bear' && sType==='Bear'){
+        winner = "tie";
+        //combination=1;
+      }else  if(uType==='Ninja' && sType==='Ninja'){
+        winner = "tie";
+        //combination=2;
+      }else if(uType==='Hunter' && sType==='Hunter'){
+        winner = "tie";
+        //combination=3;
+      }else if(uType==='Bear' && sType==='Ninja'){
+        winner = "user";
+        //combination=4;
+      }else if(uType==='Ninja' && sType==='Hunter'){
+        winner = "user";
+        //combination=5;
+      }else if(uType==='Hunter' && sType==='Bear'){
+        winner = "user";
+        //combination=6;
+      }else if(uType==='Hunter' && sType==='Ninja'){
+        winner = "computer";
+        //combination=7;
+      }else if(uType==='Bear' && sType==='Hunter'){
+        winner = "computer";
+        //combination=8;
+      }else if(uType==='Ninja' && sType==='Bear'){
+        winner = "computer";
+        //combination=9;
+      }else{
+        winner = "";
+        //combination=0;
+      }
+      switch(winner){
+        case "tie":
+          result ='Tie';
+          break;
+        case "user":
+          result ='You Win!!';
+          break;
+        case "computer":
+          result ='Computer Wins';
+          break;
+        default:
+          result ='';
+      }
+      console.log(result);
+      document.getElementById("demo").innerHTML = uPrintedType + "<br>" + sPrintedType + "<br>" + result;
     </script>
     </script>
     
