@@ -69,6 +69,8 @@
       function loop2(){
          let p = prompt(`${uName}, would you like to play again, Yes or No?`);
          if(p===null||p.toLowerCase()==='no'){
+           alert("Press F5 to Play Again.");
+           document.getElementById("demo").innerHTML = "Press F5 to Play Again.";
          }else if(p===''){
            loop2();
          }else if(p.toLowerCase()==='yes'){
