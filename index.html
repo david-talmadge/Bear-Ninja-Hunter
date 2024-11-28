@@ -28,9 +28,12 @@
         let uPrintedType = `${uName}, You picked ${uType}!`;
         let sPrintedType = `Computer Picked ${sType}!`;
         //Print types to console
+        let result = selectResult(uType, sType);
         console.log(uPrintedType);
         console.log(sPrintedType);
-        document.getElementById("demo").innerHTML = uPrintedType + "<br>" + sPrintedType;
+        console.log(result);
+        document.getElementById("demo").innerHTML = uPrintedType + "<br>" + sPrintedType + "<br>" + result;
+        loop2();
       }
       function loop2(){
          let p = prompt(`${uName}, would you like to play again, Yes or No?`);
@@ -38,6 +41,10 @@
            loop1();
          }else if(p===''){
            loop2();
+         }else if(p===null||p.toLowerCase()==='no'){
+         }else{
+           alert("Invalid Entry<br>Please Press F5 to Play Again.");
+           document.getElementById("demo").innerHTML = "Invalid Entry<br>Please Press F5 to Play Again.";
          }
       }
       
@@ -77,16 +84,16 @@
            }
            switch(result){
              case 'win':
-                return 'win';
+                return 'You Win!!';
                 break;
               case 'loss':
-                return 'loss';
+                return 'You Lose.';
                 break;
               case 'tie':
-                return 'tie';
+                return 'You Tie.';
                 break;
               default:
-                return 'tie';
+                return 'You Tie.';
             }
       }
     </script>
