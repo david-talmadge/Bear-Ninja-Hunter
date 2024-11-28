@@ -13,29 +13,40 @@
   <body>
     <p id="demo"></p>
     <script>
+      var choices = ['Bear', 'Ninja', 'Hunter'];
       //Ask name
       let uName = prompt('Welcome to Bear Hunter Ninja! Please enter your name to get started: ');
       //State name
       alert(`Hi ${uName} Let's Play!!`);
       //Ask type
       let uType = prompt('Who are you: Bear, Ninja, or Hunter? ');
+      let sType = Math.floor(Math.random()*choices.length)+1;
       //Set types to print
-      let uPrintedType = `${uName}, You picked Bear!`;
-      let sPrintedType = `Computer Picked Bear!`;
+      let uPrintedType = `${uName}, You picked ${uType}!`;
+      let sPrintedType = `Computer Picked ${sType}!`;
       //Print types to console
       console.log(uPrintedType);
       console.log(sPrintedType);
-      //Unconditionally made a Bear
       document.getElementById("demo").innerHTML = uPrintedType + "<br>" + sPrintedType;
       //document.getElementById("demo").innerHTML = `User ${uName} is a ${uType}`;
+      function selectType(){
+        let r = Math.floor(Math.random()*choices.length)+1;
+           switch(r){
+              case 1:
+                return 'bear';
+                break;
+              case 2:
+                return 'ninja';
+                break;
+              case 3:
+                return 'hunter';
+                break;
+              default:
+                return 'bear';
+            }
+      }
     </script>
-    
     <div class="wrapper">
-      <div class="box1">
-      </div>
-      <div class="box2">
-      </div>
-      
       <div class="box8">
         <p><a href="index.html">Back to the Main Page</a>  <span style="float:right;">This page created as academic activity only.</span></p>
       </div>
