@@ -40,6 +40,11 @@
       }
       function checkType(){
          let uType = prompt('Who are you: Bear, Ninja, or Hunter? ');
+         if(uType===null){
+             alert("Press F5 to Play Again.");
+             document.getElementById("demo").innerHTML = "Press F5 to Play Again.";
+             return 'cancel';
+         }
          switch(uType.toLowerCase()){
            case 'bear':
              return uType;
@@ -63,11 +68,11 @@
       }
       function loop2(){
          let p = prompt(`${uName}, would you like to play again, Yes or No?`);
-         if(p.toLowerCase()==='yes'){
-           loop1();
+         if(p===null||p.toLowerCase()==='no'){
          }else if(p===''){
            loop2();
-         }else if(p===null||p.toLowerCase()==='no'){
+         }else if(p.toLowerCase()==='yes'){
+           loop1();
          }else{
            alert("Invalid Entry\nPlease Press F5 to Play Again.");
            document.getElementById("demo").innerHTML = "Invalid Entry<br>Please Press F5 to Play Again.";
