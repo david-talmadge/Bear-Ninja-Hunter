@@ -22,19 +22,44 @@
       
       function loop1(){
         //Ask type
-        let uType = prompt('Who are you: Bear, Ninja, or Hunter? ');
-        let sType = choices[Math.floor(Math.random()*choices.length)];
-        //Set types to print
-        let uPrintedType = `${uName}, You picked ${uType}!`;
-        let sPrintedType = `Computer Picked ${sType}!`;
-        //Print types to console
-        let result = selectResult(uType, sType);
-        console.log(uPrintedType);
-        console.log(sPrintedType);
-        console.log(result);
-        alert(uPrintedType + "<br>" + sPrintedType + "<br>" + result);
-        document.getElementById("demo").innerHTML = uPrintedType + "<br>" + sPrintedType + "<br>" + result;
-        loop2();
+        let uType = loopType();
+        if(uType!='cancel'){
+          let sType = choices[Math.floor(Math.random()*choices.length)];
+          //Set types to print
+          let uPrintedType = `${uName}, You picked ${uType}!`;
+          let sPrintedType = `Computer Picked ${sType}!`;
+          //Print types to console
+          let result = selectResult(uType, sType);
+          console.log(uPrintedType);
+          console.log(sPrintedType);
+          console.log(result);
+          alert(uPrintedType + "\n" + sPrintedType + "\n" + result);
+          document.getElementById("demo").innerHTML = uPrintedType + "<br>" + sPrintedType + "<br>" + result;
+          loop2();
+        }
+      }
+      function loopType(){
+         let uType = prompt('Who are you: Bear, Ninja, or Hunter? ');
+         switch(uType.toLowerCase()){
+           case 'bear':
+             return uType;
+             break;
+           case 'ninja':
+             return uType;
+             break;
+           case 'hunter':
+             return uType;
+             break;
+           case null:
+             alert("Press F5 to Play Again.");
+             document.getElementById("demo").innerHTML = "Press F5 to Play Again.";
+             return 'cancel';
+             break;
+           default:
+             alert("Invalid Entry\nPlease Press F5 to Play Again.");
+             document.getElementById("demo").innerHTML = "Invalid Entry<br>Please Press F5 to Play Again.";
+             return 'cancel';
+         }
       }
       function loop2(){
          let p = prompt(`${uName}, would you like to play again, Yes or No?`);
@@ -44,7 +69,7 @@
            loop2();
          }else if(p===null||p.toLowerCase()==='no'){
          }else{
-           alert("Invalid Entry<br>Please Press F5 to Play Again.");
+           alert("Invalid Entry\nPlease Press F5 to Play Again.");
            document.getElementById("demo").innerHTML = "Invalid Entry<br>Please Press F5 to Play Again.";
          }
       }
