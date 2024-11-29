@@ -26,8 +26,8 @@
         if(uType!='cancel'){
           let sType = choices[Math.floor(Math.random()*choices.length)];
           //Set types to print
-          let uPrintedType = `${uName}, You picked ${uType}!`;
-          let sPrintedType = `Computer Picked ${sType}!`;
+          let uPrintedType = `${uName}, you chose ${uType}!`;
+          let sPrintedType = `The computer chose ${sType}!`;
           //Print types to console
           let result = selectResult(uType, sType);
           console.log(uPrintedType);
